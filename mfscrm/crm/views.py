@@ -9,10 +9,11 @@ def home(request):
    return render(request, 'crm/home.html',
                  {'crm': home})
 
+
 @login_required
 def customer_list(request):
     customer = Customer.objects.filter(created_date__lte=timezone.now())
-    return render(request,'crm/customer_list.html',{'customers':customer})
+    return render(request, 'crm/customer_list.html',{'customers':customer})
 
 # Create your views here.
 @login_required
